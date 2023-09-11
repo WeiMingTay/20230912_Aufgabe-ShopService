@@ -1,11 +1,14 @@
 package org.example;
 
+import java.awt.color.ProfileDataException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProductRepo {
     // Attrtibute
     List<Product> products;
+
 
     // Methoden
     public Product getProductById(String id) {
@@ -36,6 +39,8 @@ public class ProductRepo {
 
     public ProductRepo() {
         products = new ArrayList<>();
+        // TestProdukt
+        products.add(new Product("1", "Durian", BigDecimal.valueOf(39.99)));
     }
 
 
