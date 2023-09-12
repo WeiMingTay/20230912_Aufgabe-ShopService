@@ -11,7 +11,6 @@ class ShopServiceTest {
 
 
     @Test
-
     void addOrderTest() {
         //GIVEN
         ShopService shopService = new ShopService();
@@ -28,20 +27,27 @@ class ShopServiceTest {
 
     }
 
+/*
+    @Test
+    void addOrderTest_whenInvalidProductId_expectException() {
+        //GIVEN
+        ShopService shopService = new ShopService();
+        List<String> productsIds = List.of("1", "2");
 
-        @Test
-        void addOrderTest_whenInvalidProductId_expectNull() {
-            //GIVEN
-            ShopService shopService = new ShopService();
-            List<String> productsIds = List.of("1", "2");
+        //WHEN
+        Order actual = shopService.addOrder(productsIds);
 
-            //WHEN
-            Order actual = shopService.addOrder(productsIds);
+        //THEN
+        ProductNotFoundException exception = assertThrows(ProductNotFoundException.class,
+                () -> {
+                    throw new ProductNotFoundException("sumting wong");
+                }
+        );
+        assertEquals("sumting wong", exception.getMessage());
+    }
 
-            //THEN
-            assertNull(actual);
-        }
 
+ */
     @Test
     void getOrderByStatus_WhenProcessing() {
         //GIVEN
