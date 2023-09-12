@@ -17,7 +17,7 @@ public class ShopService {
 
         for (String productId : productIds) {
             Optional<Product> productToOrder = productRepo.getProductById(productId);
-            productToOrder.ifPresent(product -> System.out.println("Produkt gefunden: "+ product));
+            // productToOrder.ifPresent(product -> System.out.println("Produkt gefunden: "+ product));
             /*
             productToOrder.orElse(
                     System.out.println("Produkt mit der ID: "+productId+" konnte nicht bestellt werden")
@@ -26,14 +26,14 @@ public class ShopService {
 
              */
 
-            /* if (productToOrder.isEmpty()) {
+            if (productToOrder.isEmpty()) {
                 System.out.println("Produkt mit der ID: "+productId+" konnte nicht bestellt werden");
                 return null;
             }
-            products.add(productToOrder.ifPresent());
+            products.add(productToOrder.get());
 
 
-             */
+
         }
         Order newOrder = new Order(UUID.randomUUID().toString(), products);
 
