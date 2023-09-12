@@ -19,11 +19,12 @@ public class OrderMapRepo implements OrderRepo{
 
     @Override
     public Order addOrder(Order newOrder) {
-        return orders.put(newOrder.id(), newOrder);
+        orders.put(newOrder.id(), newOrder);
+        return newOrder;
     }
 
     @Override
     public void removeOrder(String id) {
-
+orders.remove(id);
     }
 }
