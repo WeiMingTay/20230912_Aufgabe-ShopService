@@ -43,7 +43,7 @@ printOrders
 7. Diese Datei soll eine Liste von Befehlszeilen enthalten, die der ShopService ausführen soll.
 8. Folgende Befehlszeilen sollen unterstützt werden:
 
-`addOrder` & `setStatus`
+`addOrder` & `setStatus` & `printOrders`
 ### addOrder
 9. Fügt eine neue Bestellung hinzu. Die Bestellung soll die übergebenen Produkt-IDs enthalten. Die Bestellung soll den Status `PROCESSING haben.
 ```java
