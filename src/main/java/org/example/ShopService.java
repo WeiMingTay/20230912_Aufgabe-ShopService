@@ -36,4 +36,12 @@ public class ShopService {
 
         return byStatus;
     }
+
+    @Override
+    public String toString() {
+        return "ShopService{\n" +
+                "productRepo=" + productRepo +
+                "\norderRepo=" + orderRepo +
+                "\n}";
+    }
 }

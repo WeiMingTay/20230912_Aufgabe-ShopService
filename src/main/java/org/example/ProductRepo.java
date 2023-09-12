@@ -58,4 +58,11 @@ public class ProductRepo {
     // Equals/ HashCode
 
     // toString
+
+    @Override
+    public String toString() {
+        return "ProductRepo{" +
+                "products=" + products +
+                '}';
+    }
 }
