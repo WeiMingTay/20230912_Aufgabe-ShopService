@@ -4,6 +4,7 @@ import java.awt.color.ProfileDataException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 public class ShopService {
 
@@ -26,5 +27,13 @@ public class ShopService {
 
 
         return orderRepo.addOrder(newOrder);
+    }
+    // Schreibt in dem ShopService eine Methode, die alle Bestellungen mit einem bestimmten
+    // Bestellstatus (Parameter) in einer Liste zurückgibt. Nutzt dafür Streams.
+
+    public List<Order> getOrderByStatus(Order.OrderStatus status) {
+        List<Order> byStatus = orderRepo.getOrder().stream().filter(order -> order.status() == status).collect(Collectors.toList());
+
+        return byStatus;
     }
 }
