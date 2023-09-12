@@ -7,10 +7,15 @@ public record Order(
         List<Product> products,
         OrderStatus status
 ) {
+
     public enum OrderStatus {
         PROCESSING,
         IN_DELIVERY,
         COMPLETED
+    }
+
+    public Order(String id, List<Product> products) {
+        this(id, products, null);
     }
 }
 
