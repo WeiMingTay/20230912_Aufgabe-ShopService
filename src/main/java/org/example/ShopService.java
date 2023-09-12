@@ -8,7 +8,7 @@ import java.util.UUID;
 public class ShopService {
 
     private ProductRepo productRepo = new ProductRepo();
-    private OrderListRepo orderListRepo = new OrderListRepo();
+    private OrderRepo orderRepo = new OrderListRepo();
 
     public Order addOrder(List<String> productIds) {
         List<Product> products  =new ArrayList<>();
@@ -25,6 +25,6 @@ public class ShopService {
         Order newOrder = new Order(UUID.randomUUID().toString(), products);
 
 
-        return orderListRepo.addOrder(newOrder);
+        return orderRepo.addOrder(newOrder);
     }
 }
