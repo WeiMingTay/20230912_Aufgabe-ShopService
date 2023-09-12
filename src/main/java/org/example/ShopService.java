@@ -15,6 +15,10 @@ public class ShopService {
 
         for (String productId : productIds) {
             Product productToOrder = productRepo.getProductById(productId);
+            if (productToOrder == null) {
+                System.out.println("Produkt mit der ID: "+productId+" konnte nicht bestellt werden");
+                return null;
+            }
             products.add(productToOrder);
         }
 
